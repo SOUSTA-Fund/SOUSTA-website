@@ -1,8 +1,8 @@
-const withMT = require('@material-tailwind/react/utils/withMT')
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 /** @type {import('tailwindcss').Config} */
 
-module.exports = withMT({
+module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -41,7 +41,11 @@ module.exports = withMT({
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      fontFamily: {
+        sans: ['var(--font-pt_sans)', ...defaultTheme.fontFamily.sans],
+        serif: ['var(--font-pt_serif)', ...defaultTheme.fontFamily.serif],
+      },
     },
   },
   plugins: [require('@tailwindcss/forms')],
-})
+}
