@@ -1,12 +1,8 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
-
 /** @type {import('tailwindcss').Config} */
-
 module.exports = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    `./src/pages/**/*.{js,jsx,ts,tsx}`,
+    `./src/components/**/*.{js,jsx,ts,tsx}`,
   ],
   theme: {
     colors: {
@@ -41,11 +37,7 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
-      fontFamily: {
-        sans: ['var(--font-pt_sans)', ...defaultTheme.fontFamily.sans],
-        serif: ['var(--font-pt_serif)', ...defaultTheme.fontFamily.serif],
-      },
     },
   },
-  plugins: [require('@tailwindcss/forms')],
+  plugins: [],
 }

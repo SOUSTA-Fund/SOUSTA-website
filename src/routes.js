@@ -1,6 +1,6 @@
+// Internal page routes.
+
 const routes = {
-  aboutUs: '/about-us',
-  faq: '/faq',
   home: '/',
 }
 

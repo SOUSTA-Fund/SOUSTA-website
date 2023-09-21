@@ -5,10 +5,12 @@
 /.pnp
 .pnp.js
 
-/contracts/compiled
-
 # testing
 /coverage
+
+# gatsby.js
+.cache/
+/public
 
 # next.js
 /.next/
