@@ -6,7 +6,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 
 const Nav = () => {
   return (
-    <nav className="bg-transparent border-none z-10 h-max max-w-full rounded-none shadow-none px-8 py-2 lg:px-24">
+    <nav className="absolute h-max px-8 py-2 w-full z-10 lg:px-24">
       <div className="flex items-center justify-between">
         <Link to={routes.home}>
           <div className="flex h-12 items-center w-32">
