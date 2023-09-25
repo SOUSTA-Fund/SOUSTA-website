@@ -5,7 +5,7 @@ import { Link } from 'gatsby'
 
 const Nav = () => {
   return (
-    <nav className="absolute h-max px-8 py-2 w-full z-10 lg:px-24">
+    <nav className="h-max py-2 wrapper-x z-10">
       <div className="flex items-center justify-between">
         <Link to={routes.home}>
           <div className="flex h-12 items-center w-32">
@@ -18,60 +18,60 @@ const Nav = () => {
               height="40"
               viewBox="0 0 187 40"
               preserveAspectRatio="xMidYMid meet"
-              color-interpolation-filters="sRGB"
+              colorInterpolationFilters="sRGB"
             >
               <defs>
                 <linearGradient id="92" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#fa71cd" />{' '}
-                  <stop offset="100%" stop-color="#9b59b6" />
+                  <stop offset="0%" stopColor="#fa71cd" />{' '}
+                  <stop offset="100%" stopColor="#9b59b6" />
                 </linearGradient>
                 <linearGradient id="93" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#f9d423" />{' '}
-                  <stop offset="100%" stop-color="#f83600" />
+                  <stop offset="0%" stopColor="#f9d423" />{' '}
+                  <stop offset="100%" stopColor="#f83600" />
                 </linearGradient>
                 <linearGradient id="94" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#0064d2" />{' '}
-                  <stop offset="100%" stop-color="#1cb0f6" />
+                  <stop offset="0%" stopColor="#0064d2" />{' '}
+                  <stop offset="100%" stopColor="#1cb0f6" />
                 </linearGradient>
                 <linearGradient id="95" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#f00978" />{' '}
-                  <stop offset="100%" stop-color="#3f51b1" />
+                  <stop offset="0%" stopColor="#f00978" />{' '}
+                  <stop offset="100%" stopColor="#3f51b1" />
                 </linearGradient>
                 <linearGradient id="96" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#7873f5" />{' '}
-                  <stop offset="100%" stop-color="#ec77ab" />
+                  <stop offset="0%" stopColor="#7873f5" />{' '}
+                  <stop offset="100%" stopColor="#ec77ab" />
                 </linearGradient>
                 <linearGradient id="97" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#f9d423" />{' '}
-                  <stop offset="100%" stop-color="#e14fad" />
+                  <stop offset="0%" stopColor="#f9d423" />{' '}
+                  <stop offset="100%" stopColor="#e14fad" />
                 </linearGradient>
                 <linearGradient id="98" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#009efd" />{' '}
-                  <stop offset="100%" stop-color="#2af598" />
+                  <stop offset="0%" stopColor="#009efd" />{' '}
+                  <stop offset="100%" stopColor="#2af598" />
                 </linearGradient>
                 <linearGradient id="99" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#ffcc00" />{' '}
-                  <stop offset="100%" stop-color="#00b140" />
+                  <stop offset="0%" stopColor="#ffcc00" />{' '}
+                  <stop offset="100%" stopColor="#00b140" />
                 </linearGradient>
                 <linearGradient id="100" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#d51007" />{' '}
-                  <stop offset="100%" stop-color="#ff8177" />
+                  <stop offset="0%" stopColor="#d51007" />{' '}
+                  <stop offset="100%" stopColor="#ff8177" />
                 </linearGradient>
                 <linearGradient id="102" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#a2b6df" />{' '}
-                  <stop offset="100%" stop-color="#0c3483" />
+                  <stop offset="0%" stopColor="#a2b6df" />{' '}
+                  <stop offset="100%" stopColor="#0c3483" />
                 </linearGradient>
                 <linearGradient id="103" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#7ac5d8" />{' '}
-                  <stop offset="100%" stop-color="#eea2a2" />
+                  <stop offset="0%" stopColor="#7ac5d8" />{' '}
+                  <stop offset="100%" stopColor="#eea2a2" />
                 </linearGradient>
                 <linearGradient id="104" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#00ecbc" />{' '}
-                  <stop offset="100%" stop-color="#007adf" />
+                  <stop offset="0%" stopColor="#00ecbc" />{' '}
+                  <stop offset="100%" stopColor="#007adf" />
                 </linearGradient>
                 <linearGradient id="105" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#b88746" />{' '}
-                  <stop offset="100%" stop-color="#fdf5a6" />
+                  <stop offset="0%" stopColor="#b88746" />{' '}
+                  <stop offset="100%" stopColor="#fdf5a6" />
                 </linearGradient>
               </defs>{' '}
               <g className="iconlinesvg-g iconlinesvg">
@@ -82,8 +82,8 @@ const Nav = () => {
                         <g>
                           <rect
                             fill="#213065"
-                            fill-opacity="0"
-                            stroke-width="2"
+                            fillOpacity="0"
+                            strokeWidth="2"
                             x="0"
                             y="0"
                             width="27.05002929553237"
