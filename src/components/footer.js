@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="absolute bottom-0 w-full">
       <div className="mx-auto w-full max-w-7xl px-8">
         <div className="flex w-full flex-col items-center justify-center py-4 md:flex-row">
-          <div className="text-blue-200 text-center text-sm">
+          <div className="text-center text-sm">
             &copy; {currentYear} SOUSTA. All Rights Reserved.
           </div>
         </div>
