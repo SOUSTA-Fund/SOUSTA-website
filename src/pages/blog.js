@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../components/layout'
+import Seo from '../components/seo'
 
 const Blog = ({ data }) => {
   return (
@@ -55,11 +56,7 @@ const Blog = ({ data }) => {
 export default Blog
 
 export const Head = () => {
-  return (
-    <>
-      <title>SOUSTA</title>
-    </>
-  )
+  return <Seo />
 }
 
 export const pageQuery = graphql`

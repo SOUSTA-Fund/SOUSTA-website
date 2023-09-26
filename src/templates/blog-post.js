@@ -1,6 +1,7 @@
 import React from 'react'
 import Layout from '../components/layout'
 import { graphql } from 'gatsby'
+import Seo from '../components/seo'
 
 export default function BlogPost({ data }) {
   const post = data.allWpPost.nodes[0]
@@ -16,6 +17,10 @@ export default function BlogPost({ data }) {
       </article>
     </Layout>
   )
+}
+
+export const Head = () => {
+  return <Seo />
 }
 
 export const query = graphql`
