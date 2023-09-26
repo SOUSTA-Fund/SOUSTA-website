@@ -33,12 +33,7 @@ module.exports = {
         ],
         web: [
           {
-            name: `PT Sans`,
-            file: `https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap`,
-          },
-          {
-            name: `PT Serif`,
-            file: `https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap`,
+            file: `https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=PT+Serif:ital@0;1&display=swap`,
           },
         ],
       },
