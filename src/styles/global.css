@@ -23,6 +23,14 @@ blockquote {
   @apply max-w-prose;
 }
 
+a {
+  @apply underline;
+}
+
+a:hover {
+  @apply no-underline;
+}
+
 h1 {
   @apply text-3xl md:text-5xl lg:text-7xl;
 }
