@@ -4,7 +4,10 @@
 module.exports = {
   siteMetadata: {
     title: `SOUSTA`,
-    siteUrl: `https://www.yourdomain.tld`,
+    description: `A technologically integrated private equity firm whose focus is investing in community driven real estate assets`,
+    twitterUsername: '',
+    image: '',
+    siteUrl: `https://sousta.fund`,
   },
   plugins: [
     'gatsby-plugin-postcss',
