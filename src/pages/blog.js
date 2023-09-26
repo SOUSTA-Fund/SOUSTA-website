@@ -6,7 +6,7 @@ import Layout from '../components/layout'
 const Blog = ({ data }) => {
   return (
     <Layout>
-      <div className="max-w-3xl mx-auto px-4 md:px-8 stack-lg">
+      <div className="max-w-4xl mx-auto px-4 md:px-8 stack-lg">
         <h1>Posts</h1>
         <ul className="">
           {data.allWpPost.nodes.map((node) => {
@@ -27,13 +27,17 @@ const Blog = ({ data }) => {
                   <Link to={`/${node.slug}`}>
                     <h2>{node.title}</h2>
                   </Link>
-                  <div className="flex gap-6">
+                  <div className="flex flex-col sm:flex-row gap-6">
                     {hasImage && (
                       <Link to={`/${node.slug}`}>
-                        <GatsbyImage image={image} alt={alt} />
+                        <GatsbyImage
+                          class="h-72 sm:h-full w-full"
+                          image={image}
+                          alt={alt}
+                        />
                       </Link>
                     )}
-                    <div className="stack">
+                    <div className="justify-between stack">
                       <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
                       <div>{node.date}</div>
                     </div>
