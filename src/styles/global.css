@@ -22,3 +22,15 @@ p,
 blockquote {
   @apply max-w-prose;
 }
+
+.button {
+  @apply border border-blue-900 border-solid px-8 py-2;
+}
+
+.button.primary {
+  @apply bg-blue-900 text-blue-100;
+}
+
+.button.hollow {
+  @apply text-blue-900;
+}
