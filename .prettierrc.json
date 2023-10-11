@@ -4,14 +4,5 @@
   "useTabs": false,
   "semi": false,
   "singleQuote": true,
-  "trailingComma": "all",
-  "overrides": [
-    {
-      "files": ["*.sol"],
-      "options": {
-        "singleQuote": false,
-        "tabWidth": 4
-      }
-    }
-  ]
+  "trailingComma": "all"
 }
