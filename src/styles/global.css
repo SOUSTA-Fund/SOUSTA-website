@@ -34,3 +34,16 @@ blockquote {
 .button.hollow {
   @apply text-blue-900;
 }
+
+a {
+  @apply underline;
+}
+
+#main-nav a,
+#mobile-nav a {
+  @apply no-underline;
+}
+
+.stack {
+  @apply flex flex-col gap-4;
+}
