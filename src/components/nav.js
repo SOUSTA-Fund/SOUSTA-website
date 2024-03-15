@@ -1,23 +1,24 @@
 import * as React from 'react'
-
 import routes from '../routes'
 import { Link } from 'gatsby'
 import Logo from './logo'
-import NavButtons from './navButtons'
+import NavItems from './navItems'
+import MobileToggle from './mobileToggle'
 
 const Nav = () => {
   return (
-    <nav className="absolute h-max px-8 py-2 w-full z-10 lg:px-24">
-      <div className="flex items-center justify-between">
+    <div className="h-max py-2 w-full z-10">
+      <div className="flex items-center justify-between max-w-4xl mx-auto px-4 md:px-8">
         <Link to={routes.home} aria-label="Link to home">
           <div className="flex h-12 items-center justify-between w-32">
             <span className="sr-only">SOUSTA</span>
             <Logo />
           </div>
         </Link>
-        <NavButtons />
+        <NavItems />
+        <MobileToggle />
       </div>
-    </nav>
+    </div>
   )
 }
 
