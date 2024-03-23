@@ -1,0 +1,14 @@
+{
+  "platforms": [
+    {
+      "name": "Real World Assets",
+      "desc": "Real World Assets (RWA) is an emerging concept in the blockchain space that bridges the gap between traditional finance and decentralized digital economy. RWA is a type of digital asset that is backed by real world assets such as real estate, commodities, and other hard assets. These physical assets are represented on the blockchain.  SOUSTA uses its experience in traditional finance to identify quality assets that also have a digital representation of ownership on the blockchain.",
+      "imageUrl": "https://images.unsplash.com/photo-1572120360610-d971b9d7767c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "name": "U.S. Strategy",
+      "desc": "Our strategy revolves around unlocking the full potential of mixed-use, multifamily, and single-family properties through a unique blend of value-add initiatives and commercial property repurposing, leveraging historical tax credits for sustainable growth and community revitalization.",
+      "imageUrl": "https://images.unsplash.com/photo-1508433957232-3107f5fd5995?q=80&w=1186&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    }
+  ]
+}
