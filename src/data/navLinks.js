@@ -18,6 +18,10 @@ const navLinks = [
     text: 'Investment Platforms',
   },
   {
+    link: routes.blog,
+    text: 'Blog',
+  },
+  {
     link: routes.contact,
     text: 'Contact',
   },

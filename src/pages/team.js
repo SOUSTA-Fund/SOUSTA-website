@@ -1,12 +1,13 @@
 import * as React from 'react'
 
+import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
-import { StaticImage } from 'gatsby-plugin-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
-const team = []
+const TeamPage = ({ data }) => {
+  const team = data?.allWpTeamMember?.nodes
 
-const TeamPage = () => {
   return (
     <Layout>
       <header>
@@ -14,28 +15,47 @@ const TeamPage = () => {
           The <span className="uppercase">Sousta</span> Team
         </h1>
       </header>
-      <ul className="grid gap-8 md:grid-cols-2">
-        {team.map((member) => (
-          <li key={member.name} className="bg-blue-50 p-8 shadow-lg stack">
-            <div className="flex gap-6">
-              <StaticImage
-                src="../images/team/alexander-hipp-iEEBWgY_6lA-unsplash.jpg"
-                alt={member.name}
-                className="rounded-full"
-                placeholder="blurred"
-                layout="constrained"
-                width={100}
-                height={100}
-              />
-              <div>
-                <h2 className="text-2xl font-bold">{member.name}</h2>
-                <p className="text-gray-600">{member.title}</p>
-              </div>
-            </div>
-            <p className="text-gray-600">{member.bio}</p>
-          </li>
-        ))}
-      </ul>
+      {team && (
+        <ul className="grid gap-8 md:grid-cols-2">
+          {team.map((teamMember) => {
+            let alt, image
+            const hasImage =
+              teamMember?.featuredImage?.node?.localFile?.childImageSharp
+
+            if (hasImage) {
+              image = getImage(
+                teamMember.featuredImage.node.localFile.childImageSharp,
+              )
+              alt = teamMember.featuredImage.node.altText
+            }
+
+            return (
+              <li
+                key={teamMember.title}
+                className="bg-white p-8 shadow-lg stack"
+              >
+                <div className="flex gap-6">
+                  <GatsbyImage
+                    className="h-20 rounded-full w-20"
+                    image={image}
+                    alt={alt}
+                  />
+                  <div>
+                    <h2 className="text-2xl font-bold">{teamMember.title}</h2>
+                    <p className="text-gray-600">
+                      {teamMember.teamMemberFields.jobTitle}
+                    </p>
+                  </div>
+                </div>
+                <div
+                  className="text-gray-600"
+                  dangerouslySetInnerHTML={{ __html: teamMember.content }}
+                />
+              </li>
+            )
+          })}
+        </ul>
+      )}
     </Layout>
   )
 }
@@ -45,3 +65,27 @@ export default TeamPage
 export const Head = () => {
   return <Seo />
 }
+
+export const query = graphql`
+  query {
+    allWpTeamMember {
+      nodes {
+        title
+        content
+        teamMemberFields {
+          jobTitle
+        }
+        featuredImage {
+          node {
+            altText
+            localFile {
+              childImageSharp {
+                gatsbyImageData(height: 200, width: 300)
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
