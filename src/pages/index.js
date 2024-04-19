@@ -15,7 +15,7 @@ const IndexPage = () => {
           <Nav />
         </div>
         <div className="flex flex-1 items-center">
-          <main className="bg-blue-50 max-w-4xl mx-auto px-4 py-24 self-center shadow-2xl stack text-lg md:px-8">
+          <main className="bg-blue-50 max-w-3xl mx-auto px-4 py-24 self-center shadow-2xl stack text-lg md:px-8">
             <div className="col-span-3 flex flex-col justify-center">
               <h1 className="leading-tight mb-4 text-3xl md:text-5xl">
                 Profit From Our Experience
