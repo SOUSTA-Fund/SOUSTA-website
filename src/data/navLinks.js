@@ -27,15 +27,4 @@ const navLinks = [
   },
 ]
 
-export const platforms = [
-  {
-    link: routes.investmentPlatforms.rwa,
-    text: 'Real World Assets',
-  },
-  {
-    link: routes.investmentPlatforms.usStrategy,
-    text: 'US Strategy',
-  },
-]
-
 export default navLinks

@@ -8,10 +8,6 @@ const routes = {
   platforms: '/investment-platforms',
   portfolio: '/portfolio',
   team: '/team',
-  investmentPlatforms: {
-    rwa: '/investment-platforms/rwa',
-    usStrategy: '/investment-platforms/us-strategy',
-  },
 }
 
 export default routes
