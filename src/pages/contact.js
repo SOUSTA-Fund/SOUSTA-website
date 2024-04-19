@@ -1,62 +1,39 @@
 import * as React from 'react'
-import { Card, Input, Button, Typography } from '@material-tailwind/react'
+import { graphql } from 'gatsby'
+import { Card } from '@material-tailwind/react'
 import Layout from '../components/layout'
+import ContactForm from '../components/contactForm'
 import Seo from '../components/seo'
 
-const ContactPage = () => {
+const ContactPage = ({ data }) => {
+  const post = data?.wpPage
+
   return (
     <Layout>
-      <Card className="bg-blue-50 p-8 rounded-none shadow-lg stack">
-        <header>
-          <h1 className="h2">
-            Contact <span className="uppercase">Sousta</span>
-          </h1>
-        </header>
-        <form className="max-w-prose stack">
-          <div className="stack">
-            <div>
-              <Typography color="blue-gray" className="">
-                Your Name
-              </Typography>
-              <Input
-                size="lg"
-                placeholder="name@mail.com"
-                className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-                labelProps={{
-                  className: 'before:content-none after:content-none',
-                }}
+      <Card className="bg-white p-8 rounded-none shadow-lg stack">
+        {post && (
+          <>
+            <header>
+              <h1 className="h2">{post.title}</h1>
+            </header>
+            <div className="grid gap-8 md:grid-cols-2">
+              <div
+                className="stack"
+                dangerouslySetInnerHTML={{ __html: post.content }}
               />
+              <ContactForm />
             </div>
-            <div>
-              <Typography color="blue-gray" className="">
-                Your Email
-              </Typography>
-              <Input
-                size="lg"
-                placeholder="name@mail.com"
-                className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-                labelProps={{
-                  className: 'before:content-none after:content-none',
-                }}
-              />
-            </div>
-            <div>
-              <Typography color="blue-gray" className="">
-                Message
-              </Typography>
-              <Input
-                size="lg"
-                className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-                labelProps={{
-                  className: 'before:content-none after:content-none',
-                }}
-              />
-            </div>
-          </div>
-          <Button className="bg-blue-900 rounded-none text-blue-50">
-            Send
-          </Button>
-        </form>
+          </>
+        )}
+
+        {!post && (
+          <>
+            <header>
+              <h1 className="h2">Contact Sousta</h1>
+            </header>
+            <ContactForm />
+          </>
+        )}
       </Card>
     </Layout>
   )
@@ -67,3 +44,12 @@ export default ContactPage
 export const Head = () => {
   return <Seo />
 }
+
+export const query = graphql`
+  query {
+    wpPage(id: { eq: "cG9zdDoxOTY2" }) {
+      content
+      title
+    }
+  }
+`
