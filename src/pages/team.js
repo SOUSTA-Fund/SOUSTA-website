@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { Card, CardBody, CardHeader } from '@material-tailwind/react'
 
 const TeamPage = ({ data }) => {
   const team = data?.allWpTeamMember?.nodes
@@ -11,7 +12,7 @@ const TeamPage = ({ data }) => {
   return (
     <Layout>
       <header>
-        <h1 className="text-3xl">
+        <h1 className="h1">
           The <span className="uppercase">Sousta</span> Team
         </h1>
       </header>
@@ -30,27 +31,27 @@ const TeamPage = ({ data }) => {
             }
 
             return (
-              <li
-                key={teamMember.title}
-                className="bg-white p-8 shadow-lg stack"
-              >
-                <div className="flex gap-6">
-                  <GatsbyImage
-                    className="h-20 rounded-full w-20"
-                    image={image}
-                    alt={alt}
-                  />
-                  <div>
-                    <h2 className="text-2xl font-bold">{teamMember.title}</h2>
-                    <p className="text-gray-600">
-                      {teamMember.teamMemberFields.jobTitle}
-                    </p>
-                  </div>
-                </div>
-                <div
-                  className="text-gray-600"
-                  dangerouslySetInnerHTML={{ __html: teamMember.content }}
-                />
+              <li key={teamMember.title} className="stack">
+                <article>
+                  <Card className="rounded-none">
+                    <CardHeader className="flex gap-6 m-0 p-6 pb-0 rounded-none shadow-none">
+                      <GatsbyImage
+                        className="h-20 rounded-full w-20"
+                        image={image}
+                        alt={alt}
+                      />
+                      <div>
+                        <h2>{teamMember.title}</h2>
+                        <p>{teamMember.teamMemberFields.jobTitle}</p>
+                      </div>
+                    </CardHeader>
+                    <CardBody>
+                      <div
+                        dangerouslySetInnerHTML={{ __html: teamMember.content }}
+                      />
+                    </CardBody>
+                  </Card>
+                </article>
               </li>
             )
           })}

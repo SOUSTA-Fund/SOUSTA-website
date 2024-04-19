@@ -9,17 +9,19 @@ const AboutPage = ({ data }) => {
 
   return (
     <Layout>
-      {post && (
-        <Card className="p-8 rounded-none shadow-lg stack">
-          <header>
-            <h1 className="text-3xl">{post.title}</h1>
-          </header>
-          <div
-            className="stack"
-            dangerouslySetInnerHTML={{ __html: post.content }}
-          />
-        </Card>
-      )}
+      <article>
+        {post && (
+          <Card className="p-8 rounded-none shadow-lg stack stack-lg">
+            <header>
+              <h1>{post.title}</h1>
+            </header>
+            <div
+              className="stack"
+              dangerouslySetInnerHTML={{ __html: post.content }}
+            />
+          </Card>
+        )}
+      </article>
     </Layout>
   )
 }
@@ -32,7 +34,7 @@ export const Head = () => {
 
 export const query = graphql`
   query {
-    wpPage(id: { eq: "cG9zdDoy" }) {
+    wpPage(id: { eq: "cG9zdDoxOTU5" }) {
       content
       title
     }

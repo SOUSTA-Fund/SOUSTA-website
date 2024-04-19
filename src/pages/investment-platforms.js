@@ -14,7 +14,7 @@ const PlatformsPage = ({ data }) => {
   return (
     <Layout>
       <header>
-        <h1 className="text-3xl">Investment Platforms</h1>
+        <h1 className="h1">Investment Platforms</h1>
       </header>
       <ul className="grid gap-8 md:grid-cols-2">
         {platforms.map((platform) => {
@@ -30,27 +30,29 @@ const PlatformsPage = ({ data }) => {
           }
 
           return (
-            <li key={platform.slug} className="relative shadow-lg text-blue-50">
+            <li key={platform.slug} className="shadow-lg text-blue-50">
               <Link
                 to={`${routes.platforms}/${platform.slug}`}
-                className="no-underline"
+                className="flex h-full no-underline"
               >
-                {hasImage && (
-                  <GatsbyImage
-                    className="absolute h-full left-0 top-0 w-full"
-                    image={image}
-                    alt={alt}
-                  />
-                )}
-                <div className="bg-blue-900 bg-opacity-80 h-full p-8 relative stack">
-                  <h2 className="text-2xl font-bold">{platform.title}</h2>
-                  <p className="">
-                    {
-                      platform.investmentPlatformFields
-                        ?.investmentPlatformShortDescription
-                    }
-                  </p>
-                </div>
+                <article className="relative">
+                  {hasImage && (
+                    <GatsbyImage
+                      className="absolute h-full left-0 top-0 w-full"
+                      image={image}
+                      alt={alt}
+                    />
+                  )}
+                  <div className="bg-blue-900 bg-opacity-80 h-full p-8 relative stack">
+                    <h2>{platform.title}</h2>
+                    <p className="">
+                      {
+                        platform.investmentPlatformFields
+                          ?.investmentPlatformShortDescription
+                      }
+                    </p>
+                  </div>
+                </article>
               </Link>
             </li>
           )

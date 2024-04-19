@@ -30,10 +30,12 @@ export default function PlatformsMenu({ link, text }) {
       <MenuHandler>
         <Link to={link}>{text}</Link>
       </MenuHandler>
-      <MenuList className="bg-blue-50 rounded-none">
+      <MenuList className="bg-white rounded-none">
         {platforms.map(({ slug, title }) => (
           <MenuItem key={slug} className="bg-transparent">
-            <Link to={`${routes.platforms}/${slug}`}>{title}</Link>
+            <Link className="no-underline" to={`${routes.platforms}/${slug}`}>
+              {title}
+            </Link>
           </MenuItem>
         ))}
       </MenuList>

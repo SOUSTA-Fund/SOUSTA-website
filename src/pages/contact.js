@@ -8,7 +8,7 @@ const ContactPage = () => {
     <Layout>
       <Card className="bg-blue-50 p-8 rounded-none shadow-lg stack">
         <header>
-          <h1 className="text-2xl">
+          <h1 className="h2">
             Contact <span className="uppercase">Sousta</span>
           </h1>
         </header>

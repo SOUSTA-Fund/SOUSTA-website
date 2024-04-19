@@ -15,8 +15,8 @@ const Blog = ({ data }) => {
 
   return (
     <Layout>
-      <div className="stack stack-lg">
-        <h1 className="text-3xl">Posts</h1>
+      <div className="stack">
+        <h1 className="h1">Posts</h1>
         {posts && (
           <ul className="grid gap-8 md:grid-cols-2">
             {posts.map((post) => {
@@ -33,9 +33,12 @@ const Blog = ({ data }) => {
 
               return (
                 <li key={post.slug}>
-                  <Link to={`/${post.slug}`} className="no-underline">
+                  <Link
+                    to={`/${post.slug}`}
+                    className="flex h-full no-underline"
+                  >
                     <article className="break-words">
-                      <Card className="rounded-none transition-all hover:-translate-y-1 hover:shadow-lg">
+                      <Card className="h-full justify-between rounded-none transition-all hover:-translate-y-1 hover:shadow-lg">
                         {hasImage && (
                           <CardHeader className="m-0 rounded-none shadow-none">
                             <GatsbyImage
@@ -46,7 +49,7 @@ const Blog = ({ data }) => {
                           </CardHeader>
                         )}
                         <CardBody className="stack">
-                          <h2 className="text-2xl">{post.title}</h2>
+                          <h2 className="h3">{post.title}</h2>
 
                           <div className="justify-between stack">
                             <div

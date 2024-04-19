@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
       >
         <Nav />
         <div>
-          <main className="max-w-3xl mx-auto px-4 py-24 stack md:px-8">
+          <main className="max-w-3xl mx-auto px-4 pb-24 pt-12 stack md:px-8">
             {children}
           </main>
         </div>

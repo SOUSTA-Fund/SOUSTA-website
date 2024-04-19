@@ -10,9 +10,9 @@ export default function BlogPost({ data }) {
   return (
     <Layout>
       <article>
-        <Card className="p-8 rounded-none shadow-lg stack">
+        <Card className="p-8 rounded-none shadow-lg stack stack-lg">
           <header>
-            <h1 className="text-3xl">{post.title}</h1>
+            <h1>{post.title}</h1>
             <div>{post.date}</div>
           </header>
           <div
