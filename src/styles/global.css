@@ -39,6 +39,14 @@ a {
   @apply underline;
 }
 
+a:hover {
+  @apply no-underline;
+}
+
+article a {
+  @apply text-blue-700;
+}
+
 #main-nav a,
 #mobile-nav a {
   @apply no-underline;
@@ -46,4 +54,12 @@ a {
 
 .stack {
   @apply flex flex-col gap-4;
+}
+
+.stack-md {
+  @apply gap-6;
+}
+
+.stack-lg {
+  @apply gap-8;
 }
