@@ -30,12 +30,12 @@ const PlatformsPage = ({ data }) => {
           }
 
           return (
-            <li key={platform.slug} className="shadow-lg text-blue-50">
+            <li key={platform.slug}>
               <Link
                 to={`${routes.platforms}/${platform.slug}`}
                 className="flex h-full no-underline"
               >
-                <article className="relative">
+                <article className="relative shadow-md text-blue-50 transition-all hover:-translate-y-1 hover:shadow-lg">
                   {hasImage && (
                     <GatsbyImage
                       className="absolute h-full left-0 top-0 w-full"
