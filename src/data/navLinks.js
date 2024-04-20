@@ -10,10 +10,6 @@ const navLinks = [
     text: 'Team',
   },
   {
-    link: routes.portfolio,
-    text: 'Portfolio',
-  },
-  {
     link: routes.platforms,
     text: 'Investment Platforms',
   },

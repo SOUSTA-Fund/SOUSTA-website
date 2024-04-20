@@ -6,7 +6,6 @@ const routes = {
   contact: '/contact',
   home: '/',
   platforms: '/investment-platforms',
-  portfolio: '/portfolio',
   team: '/team',
 }
 
