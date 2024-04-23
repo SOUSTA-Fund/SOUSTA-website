@@ -15,7 +15,7 @@ const IndexPage = ({ data }) => {
         backgroundImage: `url(${src})`,
       }}
     >
-      <div className="flex flex-col min-h-screen bg-black bg-opacity-60">
+      <div className="flex flex-col min-h-screen bg-blue-900 bg-opacity-50">
         <div className="bg-blue-50">
           <Nav />
         </div>
