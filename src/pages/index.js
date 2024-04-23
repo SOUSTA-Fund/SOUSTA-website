@@ -1,13 +1,18 @@
 import * as React from 'react'
+import { graphql } from 'gatsby'
 import Nav from '../components/nav'
 import Seo from '../components/seo'
 
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
+  const page = data?.wpPage
+  const src =
+    data?.wpPage?.featuredImage?.node?.localFile?.childImageSharp?.fixed?.src
+
   return (
     <div
       className="flex flex-col min-h-screen"
       style={{
-        backgroundImage: `url("https://images.unsplash.com/photo-1601585144584-2a53183be14c?q=80&w=1975&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")`,
+        backgroundImage: `url(${src})`,
       }}
     >
       <div className="flex flex-col min-h-screen bg-black bg-opacity-60">
@@ -15,15 +20,19 @@ const IndexPage = () => {
           <Nav />
         </div>
         <div className="flex flex-1 items-center">
-          <main className="bg-blue-50 max-w-3xl mx-auto px-4 py-24 self-center shadow-2xl stack text-lg md:px-8">
-            <div className="col-span-3 flex flex-col justify-center">
-              <h1 className="leading-tight mb-4 text-3xl md:text-5xl">
-                Profit From Our Experience
-              </h1>
-              <p className="text-gray-600 md:text-2xl">
-                SOUSTA is a technologically integrated private equity firm whose
-                focus is investing in community driven real estate assets.
-              </p>
+          <main className="max-w-3xl mx-auto px-4 py-24 self-center stack text-lg md:px-8">
+            <div className="bg-blue-50 col-span-3 flex flex-col justify-center px-8 py-24 shadow-2xl">
+              {page && (
+                <>
+                  <h1 className="h1 leading-tight mb-4 lg:text-4xl">
+                    {page.title}
+                  </h1>
+                  <div
+                    className="stack text-gray-600 md:text-xl"
+                    dangerouslySetInnerHTML={{ __html: page.content }}
+                  />
+                </>
+              )}
             </div>
           </main>
         </div>
@@ -37,3 +46,24 @@ export default IndexPage
 export const Head = () => {
   return <Seo />
 }
+
+export const query = graphql`
+  query {
+    wpPage(id: { eq: "cG9zdDo3MDE=" }) {
+      content
+      title
+      featuredImage {
+        node {
+          altText
+          localFile {
+            childImageSharp {
+              fixed(height: 900, width: 1600) {
+                src
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
