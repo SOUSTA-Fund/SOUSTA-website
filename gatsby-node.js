@@ -1,5 +1,6 @@
 const path = require(`path`)
 const { slash } = require(`gatsby-core-utils`)
+const { paginate } = require('gatsby-awesome-pagination')
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
@@ -19,6 +20,17 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
+
+  const blogTemplate = path.resolve(`./src/templates/blog.js`)
+
+  // Create paginated blog pages with urls /blog, /blog/2, etc.
+  paginate({
+    createPage, // The Gatsby `createPage` function
+    items: allPosts, // An array of objects
+    itemsPerPage: 4, // How many items you want per page
+    pathPrefix: '/blog', // Creates pages like `/blog`, `/blog/2`, etc
+    component: slash(blogTemplate), // Just like `createPage()`
+  })
 
   const postTemplate = path.resolve(`./src/templates/post.js`)
 

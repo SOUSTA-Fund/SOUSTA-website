@@ -2,6 +2,7 @@ import * as React from 'react'
 import { Link, graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../components/layout'
+import Pagination from '../components/pagination'
 import Seo from '../components/seo'
 import {
   Card,
@@ -10,13 +11,15 @@ import {
   CardHeader,
 } from '@material-tailwind/react'
 
-const Blog = ({ data }) => {
+const Blog = ({ data, pageContext }) => {
   const posts = data?.allWpPost?.nodes
 
   return (
     <Layout>
       <div className="stack">
-        <h1 className="h1">Posts</h1>
+        <div className="flex items-baseline justify-between">
+          <h1 className="h1">Posts</h1>
+        </div>
         {posts && (
           <ul className="grid gap-8 md:grid-cols-2">
             {posts.map((post) => {
@@ -68,6 +71,7 @@ const Blog = ({ data }) => {
             })}
           </ul>
         )}
+        <Pagination pageContext={pageContext} />
       </div>
     </Layout>
   )
@@ -80,8 +84,8 @@ export const Head = () => {
 }
 
 export const pageQuery = graphql`
-  query {
-    allWpPost(sort: { date: DESC }) {
+  query ($skip: Int!, $limit: Int!) {
+    allWpPost(limit: $limit, skip: $skip, sort: { date: DESC }) {
       nodes {
         title
         excerpt
