@@ -13,7 +13,7 @@ const PlatformsPage = ({ data }) => {
 
   return (
     <Layout>
-      <header>
+      <header className="flex justify-center">
         <h1 className="h1">Investment Platforms</h1>
       </header>
       <ul className="grid gap-8 md:grid-cols-2">
@@ -35,7 +35,7 @@ const PlatformsPage = ({ data }) => {
                 to={`${routes.platforms}/${platform.slug}`}
                 className="flex h-full no-underline"
               >
-                <article className="relative shadow-md text-blue-50 transition-all hover:-translate-y-1 hover:shadow-lg">
+                <article className="relative text-blue-50 transition-all hover:-translate-y-1">
                   {hasImage && (
                     <GatsbyImage
                       className="absolute h-full left-0 top-0 w-full"
@@ -44,7 +44,7 @@ const PlatformsPage = ({ data }) => {
                     />
                   )}
                   <div className="bg-blue-900 bg-opacity-80 h-full p-8 relative stack">
-                    <h2>{platform.title}</h2>
+                    <h2 className="h4">{platform.title}</h2>
                     <p className="">
                       {
                         platform.investmentPlatformFields

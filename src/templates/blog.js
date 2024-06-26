@@ -16,12 +16,14 @@ const Blog = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <div className="stack">
-        <div className="flex items-baseline justify-between">
-          <h1 className="h1">Posts</h1>
+      <div className="stack stack-lg">
+        <div className="flex items-baseline justify-center">
+          <h1 className="h1">
+            <span className="uppercase">Sousta</span> Blog
+          </h1>
         </div>
         {posts && (
-          <ul className="grid gap-8 md:grid-cols-2">
+          <ul className="grid gap-12 md:grid-cols-2">
             {posts.map((post) => {
               let alt, image
               const hasImage =
@@ -41,9 +43,9 @@ const Blog = ({ data, pageContext }) => {
                     className="flex h-full no-underline"
                   >
                     <article className="break-words">
-                      <Card className="h-full justify-between rounded-none transition-all hover:-translate-y-1 hover:shadow-lg">
+                      <Card className="h-full justify-between transition-all hover:-translate-y-1 stack">
                         {hasImage && (
-                          <CardHeader className="m-0 rounded-none shadow-none">
+                          <CardHeader className="m-0">
                             <GatsbyImage
                               class="h-72 sm:h-full w-full"
                               image={image}
@@ -51,8 +53,8 @@ const Blog = ({ data, pageContext }) => {
                             />
                           </CardHeader>
                         )}
-                        <CardBody className="stack">
-                          <h2 className="h3">{post.title}</h2>
+                        <CardBody className="p-0 stack">
+                          <h2 className="h5">{post.title}</h2>
 
                           <div className="justify-between stack">
                             <div
@@ -60,8 +62,10 @@ const Blog = ({ data, pageContext }) => {
                             />
                           </div>
                         </CardBody>
-                        <CardFooter>
-                          <div className="text-gray-600">{post.date}</div>
+                        <CardFooter className="p-0">
+                          <div className="text-gray-600 text-sm">
+                            {post.date}
+                          </div>
                         </CardFooter>
                       </Card>
                     </article>

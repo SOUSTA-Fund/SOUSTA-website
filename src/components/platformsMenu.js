@@ -28,7 +28,13 @@ export default function PlatformsMenu({ link, text }) {
   return (
     <Menu allowHover>
       <MenuHandler>
-        <Link to={link}>{text}</Link>
+        <Link
+          className="py-2"
+          activeClassName={'border-b border-gray-900 border-solid'}
+          to={link}
+        >
+          {text}
+        </Link>
       </MenuHandler>
       <MenuList className="bg-white rounded-none">
         {platforms.map(({ slug, title }) => (

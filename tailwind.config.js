@@ -45,6 +45,17 @@ module.exports = withMT({
         serif: ['PT Serif', ...defaultTheme.fontFamily.serif],
       },
     },
+    fontSize: {
+      xs: '0.8rem',
+      sm: '1rem',
+      base: '1.25rem',
+      lg: 'clamp(1.4063rem, 1.3251rem + 0.4058vi, 1.5625rem)',
+      xl: 'clamp(1.582rem, 1.3893rem + 0.9639vi, 1.9531rem)',
+      '2xl': 'clamp(1.7798rem, 1.4361rem + 1.7185vi, 2.4414rem)',
+      '3xl': 'clamp(2.0023rem, 1.4571rem + 2.726vi, 3.0518rem)',
+      '4xl': 'clamp(2.2525rem, 1.441rem + 4.0575vi, 3.8147rem)',
+      '5xl': 'clamp(2.5341rem, 1.3735rem + 5.8033vi, 4.7684rem)',
+    },
   },
   plugins: [],
 })

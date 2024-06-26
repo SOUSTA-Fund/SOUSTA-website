@@ -9,12 +9,12 @@ export default function BlogPost({ data }) {
 
   return (
     <Layout>
-      <article>
-        <Card className="p-8 rounded-none shadow-lg stack stack-lg">
-          <header>
-            <h1>{post.title}</h1>
-            <div>{post.date}</div>
-          </header>
+      <article className="stack stack-lg">
+        <header>
+          <h1>{post.title}</h1>
+          <div className="text-sm">{post.date}</div>
+        </header>
+        <Card className="p-0 stack">
           <div
             className="stack"
             dangerouslySetInnerHTML={{ __html: post.content }}

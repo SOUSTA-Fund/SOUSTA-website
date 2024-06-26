@@ -11,13 +11,13 @@ const TeamPage = ({ data }) => {
 
   return (
     <Layout>
-      <header>
+      <header className="flex justify-center">
         <h1 className="h1">
           The <span className="uppercase">Sousta</span> Team
         </h1>
       </header>
       {team && (
-        <ul className="grid gap-8 md:grid-cols-2">
+        <ul className="grid gap-12 md:grid-cols-2">
           {team.map((teamMember) => {
             let alt, image
             const hasImage =
@@ -33,19 +33,19 @@ const TeamPage = ({ data }) => {
             return (
               <li key={teamMember.title} className="stack">
                 <article>
-                  <Card className="rounded-none">
-                    <CardHeader className="flex gap-6 m-0 p-6 pb-0 rounded-none shadow-none">
+                  <Card>
+                    <CardHeader className="flex gap-6 m-0 p-0">
                       <GatsbyImage
-                        className="h-20 rounded-full w-20"
+                        className="h-20 w-20"
                         image={image}
                         alt={alt}
                       />
                       <div>
-                        <h2>{teamMember.title}</h2>
+                        <h2 className="h5">{teamMember.title}</h2>
                         <p>{teamMember.teamMemberFields.jobTitle}</p>
                       </div>
                     </CardHeader>
-                    <CardBody>
+                    <CardBody className="mt-6 p-0">
                       <div
                         dangerouslySetInnerHTML={{ __html: teamMember.content }}
                       />

@@ -9,11 +9,11 @@ export default function InvestmentPlatformPost({ data }) {
 
   return (
     <Layout>
-      <article>
-        <Card className="p-8 rounded-none shadow-lg stack stack-lg">
-          <header>
-            <h1>{post.title}</h1>
-          </header>
+      <article className="stack stack-lg">
+        <header>
+          <h1>{post.title}</h1>
+        </header>
+        <Card className="p-0 stack">
           <div
             className="stack"
             dangerouslySetInnerHTML={{ __html: post.content }}

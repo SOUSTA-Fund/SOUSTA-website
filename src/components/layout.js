@@ -4,11 +4,7 @@ import Footer from '../components/footer'
 
 const Layout = ({ children }) => {
   return (
-    <div
-      style={{
-        backgroundImage: 'linear-gradient(150deg, #ffffff 0%, #7a83a3 100%)',
-      }}
-    >
+    <div>
       <div
         className="flex flex-col justify-between min-h-screen"
         style={{
@@ -17,7 +13,7 @@ const Layout = ({ children }) => {
       >
         <Nav />
         <div>
-          <main className="max-w-3xl mx-auto px-4 pb-24 pt-12 stack md:px-8">
+          <main className="max-w-4xl mx-auto px-4 pb-24 pt-12 stack stack-lg md:px-8">
             {children}
           </main>
         </div>
