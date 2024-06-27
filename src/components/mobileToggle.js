@@ -21,7 +21,12 @@ export default function MobileToggle() {
 
   return (
     <>
-      <Button variant="text" onClick={openDrawer} ripple={false}>
+      <Button
+        className="bg-white text-gray-900 hover:bg-white:"
+        variant="text"
+        onClick={openDrawer}
+        ripple={false}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -46,7 +51,7 @@ export default function MobileToggle() {
           </div>
         </Link>
         <nav id="main-nav">
-          <ul className="flex flex-col gap-6 text-blue-800 text-xl">
+          <ul className="flex flex-col gap-6 text-blue-800 text-lg">
             {navLinks.map((link, i) => (
               <li key={i}>
                 <Link to={link.link}>{link.text}</Link>
