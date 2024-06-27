@@ -6,6 +6,8 @@ module.exports = withMT({
   content: [
     `./src/pages/**/*.{js,jsx,ts,tsx}`,
     `./src/components/**/*.{js,jsx,ts,tsx}`,
+    `./src/templates/**/*.{js,jsx,ts,tsx}`,
+    `./src/styles/**/*.{js,jsx,ts,tsx}`,
   ],
   theme: {
     extend: {
@@ -41,8 +43,7 @@ module.exports = withMT({
         },
       },
       fontFamily: {
-        sans: ['PT Sans', ...defaultTheme.fontFamily.sans],
-        serif: ['PT Serif', ...defaultTheme.fontFamily.serif],
+        sans: ['IBM Plex Sans', ...defaultTheme.fontFamily.sans],
       },
     },
     fontSize: {
