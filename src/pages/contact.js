@@ -9,7 +9,7 @@ const ContactPage = ({ data }) => {
   const post = data?.wpPage
 
   return (
-    <Layout>
+    <Layout variant={'wide'}>
       {post && (
         <>
           <header className="flex justify-center">

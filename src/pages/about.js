@@ -9,13 +9,13 @@ const AboutPage = ({ data }) => {
 
   return (
     <Layout>
-      <article className="stack stack-lg">
+      <article className="stack stack-2xl">
         {post && (
           <>
             <header>
               <h1>{post.title}</h1>
             </header>
-            <Card className="p-0 rounded-none shadow-none">
+            <Card className="p-0">
               <div
                 className="stack"
                 dangerouslySetInnerHTML={{ __html: post.content }}

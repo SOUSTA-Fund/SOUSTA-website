@@ -9,7 +9,7 @@ export default function InvestmentPlatformPost({ data }) {
 
   return (
     <Layout>
-      <article className="stack stack-lg">
+      <article className="stack stack-2xl">
         <header>
           <h1>{post.title}</h1>
         </header>

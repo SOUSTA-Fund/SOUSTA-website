@@ -12,11 +12,11 @@ const PlatformsPage = ({ data }) => {
   } = data
 
   return (
-    <Layout>
+    <Layout variant={'wide'}>
       <header className="flex justify-center">
         <h1 className="h1">Investment Platforms</h1>
       </header>
-      <ul className="grid gap-8 md:grid-cols-2">
+      <ul className="grid gap-12 md:grid-cols-2">
         {platforms.map((platform) => {
           let alt, image
           const hasImage =
