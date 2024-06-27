@@ -10,7 +10,7 @@ const TeamPage = ({ data }) => {
   const team = data?.allWpTeamMember?.nodes
 
   return (
-    <Layout>
+    <Layout variant={'wide'}>
       <header className="flex justify-center">
         <h1 className="h1">
           The <span className="uppercase">Sousta</span> Team
@@ -35,13 +35,9 @@ const TeamPage = ({ data }) => {
                 <article>
                   <Card>
                     <CardHeader className="flex gap-6 m-0 p-0">
-                      <GatsbyImage
-                        className="h-20 w-20"
-                        image={image}
-                        alt={alt}
-                      />
+                      <GatsbyImage image={image} alt={alt} />
                       <div>
-                        <h2 className="h5">{teamMember.title}</h2>
+                        <h2 className="h4">{teamMember.title}</h2>
                         <p>{teamMember.teamMemberFields.jobTitle}</p>
                       </div>
                     </CardHeader>
@@ -81,7 +77,7 @@ export const query = graphql`
             altText
             localFile {
               childImageSharp {
-                gatsbyImageData(layout: FIXED, height: 90, width: 90)
+                gatsbyImageData(layout: FIXED, height: 150, width: 150)
               }
             }
           }
