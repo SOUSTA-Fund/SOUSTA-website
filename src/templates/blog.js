@@ -15,15 +15,15 @@ const Blog = ({ data, pageContext }) => {
   const posts = data?.allWpPost?.nodes
 
   return (
-    <Layout>
-      <div className="stack stack-lg">
+    <Layout variant={'wide'}>
+      <>
         <div className="flex items-baseline justify-center">
           <h1 className="h1">
             <span className="uppercase">Sousta</span> Blog
           </h1>
         </div>
         {posts && (
-          <ul className="grid gap-12 md:grid-cols-2">
+          <ul className="grid gap-12 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
             {posts.map((post) => {
               let alt, image
               const hasImage =
@@ -53,20 +53,12 @@ const Blog = ({ data, pageContext }) => {
                             />
                           </CardHeader>
                         )}
-                        <CardBody className="p-0 stack">
+                        <CardBody className="p-0 stack stack-xl">
                           <h2 className="h5">{post.title}</h2>
-
-                          <div className="justify-between stack">
-                            <div
-                              dangerouslySetInnerHTML={{ __html: post.excerpt }}
-                            />
-                          </div>
-                        </CardBody>
-                        <CardFooter className="p-0">
                           <div className="text-gray-600 text-sm">
                             {post.date}
                           </div>
-                        </CardFooter>
+                        </CardBody>
                       </Card>
                     </article>
                   </Link>
@@ -76,7 +68,7 @@ const Blog = ({ data, pageContext }) => {
           </ul>
         )}
         <Pagination pageContext={pageContext} />
-      </div>
+      </>
     </Layout>
   )
 }
@@ -92,7 +84,6 @@ export const pageQuery = graphql`
     allWpPost(limit: $limit, skip: $skip, sort: { date: DESC }) {
       nodes {
         title
-        excerpt
         slug
         date(formatString: "MMMM DD, YYYY")
         featuredImage {
