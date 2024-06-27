@@ -3,7 +3,8 @@
 const theme = {
   button: {
     defaultProps: {
-      className: 'bg-blue-900 rounded-none',
+      className:
+        'bg-blue-900 rounded-none text-blue-50 hover:bg-yellow-600 hover:text-gray-900 hover:shadow-none',
       ripple: false,
     },
   },

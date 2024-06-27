@@ -22,7 +22,7 @@ h5,
 .h5,
 h6,
 .h6 {
-  @apply font-bold;
+  @apply font-bold leading-[1.1];
 }
 
 h1,
@@ -77,10 +77,6 @@ a:hover {
   @apply no-underline;
 }
 
-article a {
-  @apply text-blue-700;
-}
-
 #main-nav a,
 #mobile-nav a {
   @apply no-underline;
@@ -98,6 +94,20 @@ article a {
   @apply gap-8;
 }
 
+.stack-xl {
+  @apply gap-10;
+}
+
+.stack-2xl {
+  @apply gap-12;
+}
+
+/* WordPress */
+
+article a {
+  @apply text-blue-700;
+}
+
 article ul,
 article ol {
   @apply pl-4 stack;
@@ -113,4 +123,16 @@ article h1 {
 
 article h2 {
   @apply h2;
+}
+
+.is-layout-flex {
+  @apply flex gap-6;
+}
+
+.wp-block-button {
+  @apply flex;
+}
+
+.wp-block-button a.wp-block-button__link {
+  @apply border border-gray-900 py-3 px-6 no-underline text-gray-900 text-sm uppercase hover:bg-yellow-600;
 }
