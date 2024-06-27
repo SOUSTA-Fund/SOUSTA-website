@@ -51,9 +51,7 @@ const ContactForm = () => {
           </Typography>
         </div>
       </div>
-      <Button type="submit" className="bg-blue-900 rounded-none text-blue-50">
-        Send Message
-      </Button>
+      <Button type="submit">Send Message</Button>
     </form>
   )
 }
