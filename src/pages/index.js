@@ -23,27 +23,33 @@ const IndexPage = ({ data }) => {
               />
             </Card>
             <div className="flex flex-col gap-6 md:flex-row">
-              <Link
-                className="bg-white border border-gray-900 py-3 px-6 no-underline text-gray-900 text-sm transition-all uppercase hover:bg-yellow-600"
-                to={routes.about}
-                aria-label="about"
-              >
-                About
-              </Link>
-              <Link
-                className="bg-white border border-gray-900 py-3 px-6 no-underline text-gray-900 text-sm transition-all uppercase hover:bg-yellow-600"
-                to={routes.team}
-                aria-label="about"
-              >
-                Team
-              </Link>
-              <Link
-                className="bg-white border border-gray-900 py-3 px-6 no-underline text-gray-900 text-sm transition-all uppercase hover:bg-yellow-600"
-                to={routes.platforms}
-                aria-label="about"
-              >
-                Investment Platforms
-              </Link>
+              <div className="flex">
+                <Link
+                  className="bg-white border border-gray-900 py-3 px-6 no-underline text-gray-900 text-sm transition-all uppercase hover:bg-yellow-600"
+                  to={routes.about}
+                  aria-label="about"
+                >
+                  About
+                </Link>
+              </div>
+              <div className="flex">
+                <Link
+                  className="bg-white border border-gray-900 py-3 px-6 no-underline text-gray-900 text-sm transition-all uppercase hover:bg-yellow-600"
+                  to={routes.team}
+                  aria-label="about"
+                >
+                  Team
+                </Link>
+              </div>
+              <div className="flex">
+                <Link
+                  className="bg-white border border-gray-900 py-3 px-6 no-underline text-gray-900 text-sm transition-all uppercase hover:bg-yellow-600"
+                  to={routes.platforms}
+                  aria-label="about"
+                >
+                  Investment Platforms
+                </Link>
+              </div>
             </div>
           </>
         )}
@@ -60,14 +66,9 @@ export const Head = () => {
 
 export const query = graphql`
   query {
-    wpPage(id: { eq: "cG9zdDo3MDE=" }) {
+    wpPage(id: { eq: "cG9zdDoxOTY2" }) {
       content
       title
-      featuredImage {
-        node {
-          altText
-        }
-      }
     }
   }
 `
