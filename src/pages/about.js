@@ -36,7 +36,7 @@ export const Head = () => {
 
 export const query = graphql`
   query {
-    wpPage(id: { eq: "cG9zdDoxOTU5" }) {
+    wpPage(id: { eq: "cG9zdDoxOTY5" }) {
       content
       title
     }
