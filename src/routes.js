@@ -5,7 +5,7 @@ const routes = {
   blog: '/blog',
   contact: '/contact',
   home: '/',
-  platforms: '/investment-platforms',
+  strategies: '/strategies',
   team: '/team',
 }
 

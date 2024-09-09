@@ -36,7 +36,7 @@ const IndexPage = ({ data }) => {
                 <Link
                   className="bg-white border border-gray-900 py-3 px-6 no-underline text-gray-900 text-sm transition-all uppercase hover:bg-yellow-600"
                   to={routes.team}
-                  aria-label="about"
+                  aria-label="team"
                 >
                   Team
                 </Link>
@@ -44,10 +44,10 @@ const IndexPage = ({ data }) => {
               <div className="flex">
                 <Link
                   className="bg-white border border-gray-900 py-3 px-6 no-underline text-gray-900 text-sm transition-all uppercase hover:bg-yellow-600"
-                  to={routes.platforms}
-                  aria-label="about"
+                  to={routes.strategies}
+                  aria-label="strategies"
                 >
-                  Investment Platforms
+                  Strategies
                 </Link>
               </div>
             </div>

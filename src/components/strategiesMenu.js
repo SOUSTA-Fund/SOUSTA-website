@@ -4,15 +4,15 @@ import { Menu, MenuHandler, MenuList, MenuItem } from '@material-tailwind/react'
 import routes from '../routes'
 
 /**
- * Creates the investment platforms menu item and dropdown.
- * Queries graphql for the investment platform menu items.
+ * Creates the strategies menu item and dropdown.
+ * Queries graphql for the strategy menu items.
  * @param {*}
  * @returns
  */
-export default function PlatformsMenu({ link, text }) {
+export default function StrategiesMenu({ link, text }) {
   const data = useStaticQuery(graphql`
     query {
-      allWpInvestmentPlatform {
+      allWpStrategy {
         nodes {
           title
           slug
@@ -22,7 +22,7 @@ export default function PlatformsMenu({ link, text }) {
   `)
 
   const {
-    allWpInvestmentPlatform: { nodes: platforms },
+    allWpStrategy: { nodes: strategies },
   } = data
 
   return (
@@ -37,9 +37,9 @@ export default function PlatformsMenu({ link, text }) {
         </Link>
       </MenuHandler>
       <MenuList className="bg-white rounded-none">
-        {platforms.map(({ slug, title }) => (
+        {strategies.map(({ slug, title }) => (
           <MenuItem key={slug} className="bg-transparent">
-            <Link className="no-underline" to={`${routes.platforms}/${slug}`}>
+            <Link className="no-underline" to={`${routes.strategies}/${slug}`}>
               {title}
             </Link>
           </MenuItem>

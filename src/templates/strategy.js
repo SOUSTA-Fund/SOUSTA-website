@@ -4,8 +4,8 @@ import { graphql } from 'gatsby'
 import Seo from '../components/seo'
 import { Card } from '@material-tailwind/react'
 
-export default function InvestmentPlatformPost({ data }) {
-  const post = data.allWpInvestmentPlatform.nodes[0]
+export default function StrategyPost({ data }) {
+  const post = data.allWpStrategy.nodes[0]
 
   return (
     <Layout>
@@ -30,7 +30,7 @@ export const Head = () => {
 
 export const query = graphql`
   query ($id: String!) {
-    allWpInvestmentPlatform(filter: { id: { eq: $id } }) {
+    allWpStrategy(filter: { id: { eq: $id } }) {
       nodes {
         content
         title

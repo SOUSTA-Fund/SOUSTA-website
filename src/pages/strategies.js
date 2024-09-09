@@ -6,33 +6,33 @@ import Layout from '../components/layout'
 import Seo from '../components/seo'
 import routes from '../routes'
 
-const PlatformsPage = ({ data }) => {
+const StrategiesPage = ({ data }) => {
   const {
-    allWpInvestmentPlatform: { nodes: platforms },
+    allWpStrategy: { nodes: strategies },
   } = data
 
   return (
     <Layout variant={'wide'}>
       <header className="flex justify-center">
-        <h1 className="h1">Investment Platforms</h1>
+        <h1 className="h1">Strategies</h1>
       </header>
       <ul className="grid gap-12 md:grid-cols-2">
-        {platforms.map((platform) => {
+        {strategies.map((strategy) => {
           let alt, image
           const hasImage =
-            platform?.featuredImage?.node?.localFile?.childImageSharp
+            strategy?.featuredImage?.node?.localFile?.childImageSharp
 
           if (hasImage) {
             image = getImage(
-              platform.featuredImage.node.localFile.childImageSharp,
+              strategy.featuredImage.node.localFile.childImageSharp,
             )
-            alt = platform.featuredImage.node.altText
+            alt = strategy.featuredImage.node.altText
           }
 
           return (
-            <li key={platform.slug}>
+            <li key={strategy.slug}>
               <Link
-                to={`${routes.platforms}/${platform.slug}`}
+                to={`${routes.strategies}/${strategy.slug}`}
                 className="flex h-full no-underline"
               >
                 <article className="relative text-blue-50 transition-all hover:-translate-y-1">
@@ -44,12 +44,9 @@ const PlatformsPage = ({ data }) => {
                     />
                   )}
                   <div className="bg-blue-900 bg-opacity-80 h-full p-8 relative stack">
-                    <h2 className="h4">{platform.title}</h2>
+                    <h2 className="h4">{strategy.title}</h2>
                     <p className="">
-                      {
-                        platform.investmentPlatformFields
-                          ?.investmentPlatformShortDescription
-                      }
+                      {strategy.strategyFields?.strategyShortDescription}
                     </p>
                   </div>
                 </article>
@@ -62,7 +59,7 @@ const PlatformsPage = ({ data }) => {
   )
 }
 
-export default PlatformsPage
+export default StrategiesPage
 
 export const Head = () => {
   return <Seo />
@@ -70,12 +67,12 @@ export const Head = () => {
 
 export const query = graphql`
   query {
-    allWpInvestmentPlatform {
+    allWpStrategy {
       nodes {
         title
         slug
-        investmentPlatformFields {
-          investmentPlatformShortDescription
+        strategyFields {
+          strategyShortDescription
         }
         featuredImage {
           node {

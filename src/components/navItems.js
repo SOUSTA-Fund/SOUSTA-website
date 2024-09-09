@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import navLinks from '../data/navLinks'
 import useWindowSize from '../hooks/useWindowSize'
 import MOBILE_BREAKPOINT from '../data/mobileBreakpoint'
-import PlatformsMenu from './platformsMenu'
+import StrategiesMenu from './strategiesMenu'
 
 export default function NavItems() {
   const windowSize = useWindowSize()
@@ -16,10 +16,10 @@ export default function NavItems() {
     <nav id="main-nav">
       <ul className="flex gap-10 text-sm tracking-wide uppercase">
         {navLinks.map(({ link, text }, i) => {
-          if (text.toLowerCase().includes('investment')) {
+          if (text.toLowerCase().includes('strategies')) {
             return (
               <li key={i}>
-                <PlatformsMenu link={link} text={text} />
+                <StrategiesMenu link={link} text={text} />
               </li>
             )
           } else {

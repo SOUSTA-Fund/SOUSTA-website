@@ -48,14 +48,14 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  // query content for Investment Platform posts
+  // query content for Strategy posts
   const {
     data: {
-      allWpInvestmentPlatform: { nodes: allPlatforms },
+      allWpStrategy: { nodes: allStrategies },
     },
   } = await graphql(`
     query {
-      allWpInvestmentPlatform {
+      allWpStrategy {
         nodes {
           id
           slug
@@ -64,20 +64,18 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
-  const investmentPlatformTemplate = path.resolve(
-    `./src/templates/investment-platform.js`,
-  )
+  const strategyTemplate = path.resolve(`./src/templates/strategy.js`)
 
-  allPlatforms.forEach((platform) => {
+  allStrategies.forEach((strategy) => {
     createPage({
       // will be the url for the page
-      path: `/investment-platforms/${platform.slug}`,
+      path: `/strategies/${strategy.slug}`,
       // specify the component template of your choice
-      component: slash(investmentPlatformTemplate),
+      component: slash(strategyTemplate),
       // In the ^template's GraphQL query, 'id' will be available
-      // as a GraphQL variable to query for this platform's data.
+      // as a GraphQL variable to query for this strategy's data.
       context: {
-        id: platform.id,
+        id: strategy.id,
       },
     })
   })

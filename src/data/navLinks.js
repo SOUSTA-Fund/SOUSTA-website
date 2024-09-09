@@ -10,8 +10,8 @@ const navLinks = [
     text: 'Team',
   },
   {
-    link: routes.platforms,
-    text: 'Investment Platforms',
+    link: routes.strategies,
+    text: 'Strategies',
   },
   {
     link: routes.contact,
