@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  @apply text-base;
+  @apply text-base text-gray-900;
 }
 
 h1,

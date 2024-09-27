@@ -8,6 +8,14 @@ import { Card, CardBody, CardHeader } from '@material-tailwind/react'
 
 const TeamPage = ({ data }) => {
   const team = data?.allWpTeamMember?.nodes
+  const sortedTeam = []
+
+  team.forEach((m) => {
+    if (m.title === 'Marcus Bourn') sortedTeam[0] = m
+    if (m.title === 'Richard Dunn') sortedTeam[1] = m
+    if (m.title === 'Douglas Thiessen') sortedTeam[2] = m
+    if (m.title === 'Paul Garcia') sortedTeam[3] = m
+  })
 
   return (
     <Layout variant={'wide'}>
@@ -18,7 +26,7 @@ const TeamPage = ({ data }) => {
       </header>
       {team && (
         <ul className="grid gap-12 md:grid-cols-2">
-          {team.map((teamMember) => {
+          {sortedTeam.map((teamMember) => {
             let alt, image
             const hasImage =
               teamMember?.featuredImage?.node?.localFile?.childImageSharp
@@ -35,10 +43,12 @@ const TeamPage = ({ data }) => {
                 <article>
                   <Card>
                     <CardHeader className="flex gap-6 m-0 p-0">
-                      <GatsbyImage image={image} alt={alt} />
+                      {image && <GatsbyImage image={image} alt={alt} />}
                       <div>
                         <h2 className="h4">{teamMember.title}</h2>
-                        <p>{teamMember.teamMemberFields.jobTitle}</p>
+                        <p className="text-gray-700">
+                          {teamMember.teamMemberFields.jobTitle}
+                        </p>
                       </div>
                     </CardHeader>
                     <CardBody className="mt-6 p-0">
