@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import { Link, graphql } from 'gatsby'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { getImage } from 'gatsby-plugin-image'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 import routes from '../routes'
@@ -18,7 +18,7 @@ const StrategiesPage = ({ data }) => {
       </header>
       <ul className="grid gap-12 md:grid-cols-2">
         {strategies.map((strategy) => {
-          let alt, image
+          let image, src
           const hasImage =
             strategy?.featuredImage?.node?.localFile?.childImageSharp
 
@@ -26,7 +26,7 @@ const StrategiesPage = ({ data }) => {
             image = getImage(
               strategy.featuredImage.node.localFile.childImageSharp,
             )
-            alt = strategy.featuredImage.node.altText
+            src = image.images?.fallback?.src
           }
 
           return (
@@ -35,15 +35,11 @@ const StrategiesPage = ({ data }) => {
                 to={`${routes.strategies}/${strategy.slug}`}
                 className="flex h-full no-underline"
               >
-                <article className="relative text-blue-50 transition-all hover:-translate-y-1">
-                  {hasImage && (
-                    <GatsbyImage
-                      className="absolute h-full left-0 top-0 w-full"
-                      image={image}
-                      alt={alt}
-                    />
-                  )}
-                  <div className="bg-blue-900 bg-opacity-80 h-full p-8 relative stack">
+                <article
+                  className="bg-cover bg-no-repeat text-blue-50 transition-all hover:-translate-y-1"
+                  style={{ backgroundImage: hasImage ? `url(${src})` : '' }}
+                >
+                  <div className="bg-blue-900 bg-opacity-80 h-full p-8 stack">
                     <h2 className="h4">{strategy.title}</h2>
                     <p className="">
                       {strategy.strategyFields?.strategyShortDescription}
