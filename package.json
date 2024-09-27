@@ -13,7 +13,6 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "@auth0/auth0-react": "^2.2.1",
     "@fontsource/ibm-plex-sans": "^5.0.20",
     "@fontsource/pt-sans": "^5.0.8",
     "@fontsource/pt-serif": "^5.0.13",
