@@ -9,8 +9,6 @@ module.exports = {
   siteMetadata: {
     title: `SOUSTA`,
     description: `A technologically integrated private equity firm whose focus is investing in community driven real estate assets`,
-    twitterUsername: '',
-    image: '',
     siteUrl: `https://sousta.fund`,
   },
   plugins: [
