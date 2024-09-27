@@ -1,15 +1,19 @@
 import * as React from 'react'
+import FooterLogo from './footerLogo'
+import FooterNav from './footerNav'
+import Address from './address'
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear()
-
   return (
-    <footer className="absolute bottom-0 w-full">
-      <div className="mx-auto w-full max-w-7xl px-8">
-        <div className="flex w-full flex-col items-center justify-center py-4 md:flex-row">
-          <div className="text-center text-sm">
-            &copy; {currentYear} SOUSTA. All Rights Reserved.
+    <footer className="bg-blue-900 bottom-0 w-full">
+      <div className="mx-auto w-full max-w-6xl px-4 md:px-8">
+        <div className="flex w-full flex-wrap gap-10 justify-between py-16 sm:gap-16">
+          <div className="flex flex-wrap gap-10 sm:gap-16">
+            <FooterLogo />
+            <FooterNav />
           </div>
+
+          <Address />
         </div>
       </div>
     </footer>

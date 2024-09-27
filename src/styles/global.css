@@ -2,13 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  font-size: 16px;
+}
+
+body {
+  @apply text-base text-gray-900;
+}
+
 h1,
+.h1,
 h2,
+.h2,
 h3,
+.h3,
 h4,
+.h4,
 h5,
-h6 {
-  @apply font-serif;
+.h5,
+h6,
+.h6 {
+  @apply font-bold leading-[1.1];
 }
 
 h1,
@@ -21,4 +35,104 @@ li,
 p,
 blockquote {
   @apply max-w-prose;
+}
+
+.h1 {
+  @apply text-3xl md:text-4xl;
+}
+
+.h2 {
+  @apply text-2xl md:text-3xl;
+}
+
+.h3 {
+  @apply text-xl md:text-2xl;
+}
+
+.h4 {
+  @apply text-lg md:text-xl;
+}
+
+.h5 {
+  @apply text-base md:text-lg;
+}
+
+.button {
+  @apply border border-blue-900 border-solid px-8 py-2;
+}
+
+.button.primary {
+  @apply bg-blue-900 text-blue-100;
+}
+
+.button.hollow {
+  @apply text-blue-900;
+}
+
+a {
+  @apply underline;
+}
+
+a:hover {
+  @apply no-underline;
+}
+
+#main-nav a,
+#mobile-nav a {
+  @apply no-underline;
+}
+
+.stack {
+  @apply flex flex-col gap-4;
+}
+
+.stack-md {
+  @apply gap-6;
+}
+
+.stack-lg {
+  @apply gap-8;
+}
+
+.stack-xl {
+  @apply gap-10;
+}
+
+.stack-2xl {
+  @apply gap-12;
+}
+
+/* WordPress */
+
+article a {
+  @apply text-blue-700;
+}
+
+article ul,
+article ol {
+  @apply pl-4 stack;
+}
+
+article ol {
+  @apply list-decimal;
+}
+
+article h1 {
+  @apply h1;
+}
+
+article h2 {
+  @apply h2;
+}
+
+.is-layout-flex {
+  @apply flex gap-6;
+}
+
+.wp-block-button {
+  @apply flex;
+}
+
+.wp-block-button a.wp-block-button__link {
+  @apply border border-gray-900 py-3 px-6 no-underline text-gray-900 text-sm uppercase hover:bg-yellow-600;
 }

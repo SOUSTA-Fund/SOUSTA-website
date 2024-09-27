@@ -1,0 +1,3 @@
+const MOBILE_BREAKPOINT = 800
+
+export default MOBILE_BREAKPOINT
