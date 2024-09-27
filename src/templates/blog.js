@@ -4,12 +4,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../components/layout'
 import Pagination from '../components/pagination'
 import Seo from '../components/seo'
-import {
-  Card,
-  CardBody,
-  CardFooter,
-  CardHeader,
-} from '@material-tailwind/react'
+import { Card, CardBody, CardHeader } from '@material-tailwind/react'
 
 const Blog = ({ data, pageContext }) => {
   const posts = data?.allWpPost?.nodes

@@ -7,7 +7,6 @@ import './src/styles/global.css'
 
 import React from 'react'
 import { ThemeProvider } from '@material-tailwind/react'
-import { navigate } from 'gatsby'
 import theme from './src/styles/theme.js'
 
 export const wrapRootElement = ({ element }) => {
