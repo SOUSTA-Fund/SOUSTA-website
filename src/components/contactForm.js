@@ -7,11 +7,15 @@ const ContactForm = () => {
       className="max-w-prose stack stack-lg"
       name="contact"
       method="POST"
-      netlify-honeypot="hidden"
+      netlify-honeypot="bot-field"
       data-netlify="true"
     >
       <div className="stack">
-        <input name="hidden" type="hidden" />
+        <p className="hidden">
+          <label>
+            Don't fill this out if you're human: <input name="bot-field" />
+          </label>
+        </p>
         <input
           name="subject"
           type="hidden"
