@@ -18,7 +18,7 @@ const ContactForm = () => {
           value="New contact form submission from Sousta website"
         />
         <div>
-          <Input size="lg" label="Your Name" name="name" required />
+          <Input size="lg" type="text" label="Your Name" name="name" required />
         </div>
         <div>
           <Input
