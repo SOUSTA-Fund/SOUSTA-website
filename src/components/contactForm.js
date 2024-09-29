@@ -5,6 +5,7 @@ const ContactForm = () => {
   return (
     <form
       className="max-w-prose stack stack-lg"
+      action="/contact"
       name="contact"
       method="POST"
       netlify-honeypot="bot-field"
