@@ -86,6 +86,10 @@ a:hover {
   @apply flex flex-col gap-4;
 }
 
+.stack-sm {
+  @apply gap-2;
+}
+
 .stack-md {
   @apply gap-6;
 }
