@@ -6,7 +6,7 @@ const ContactForm = () => {
     <form
       className="max-w-prose stack stack-lg"
       data-netlify="true"
-      enctype="application/x-www-form-urlencoded"
+      encType="application/x-www-form-urlencoded"
       method="POST"
       name="contact"
       netlify-honeypot="bot-field"
