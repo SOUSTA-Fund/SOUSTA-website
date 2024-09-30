@@ -4,7 +4,6 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import { Card, CardBody, CardHeader } from '@material-tailwind/react'
 
 const TeamPage = ({ data }) => {
   const team = data?.allWpTeamMember?.nodes
@@ -41,8 +40,8 @@ const TeamPage = ({ data }) => {
             return (
               <li key={teamMember.title} className="stack">
                 <article>
-                  <Card>
-                    <CardHeader className="flex gap-6 m-0 p-0">
+                  <div className="bg-white">
+                    <div className="flex gap-6 m-0 p-0">
                       {image && <GatsbyImage image={image} alt={alt} />}
                       <div>
                         <h2 className="h4">{teamMember.title}</h2>
@@ -50,13 +49,13 @@ const TeamPage = ({ data }) => {
                           {teamMember.teamMemberFields.jobTitle}
                         </p>
                       </div>
-                    </CardHeader>
-                    <CardBody className="mt-6 p-0">
+                    </div>
+                    <div className="mt-6 p-0">
                       <div
                         dangerouslySetInnerHTML={{ __html: teamMember.content }}
                       />
-                    </CardBody>
-                  </Card>
+                    </div>
+                  </div>
                 </article>
               </li>
             )

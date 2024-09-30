@@ -4,7 +4,6 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../components/layout'
 import Pagination from '../components/pagination'
 import Seo from '../components/seo'
-import { Card, CardBody, CardHeader } from '@material-tailwind/react'
 
 const Blog = ({ data, pageContext }) => {
   const posts = data?.allWpPost?.nodes
@@ -38,23 +37,23 @@ const Blog = ({ data, pageContext }) => {
                     className="flex h-full no-underline"
                   >
                     <article className="break-words">
-                      <Card className="h-full justify-between transition-all hover:-translate-y-1 stack">
+                      <div className="h-full justify-between transition-all hover:-translate-y-1 stack">
                         {hasImage && (
-                          <CardHeader className="m-0">
+                          <div className="m-0">
                             <GatsbyImage
                               class="h-72 sm:h-full w-full"
                               image={image}
                               alt={alt}
                             />
-                          </CardHeader>
+                          </div>
                         )}
-                        <CardBody className="p-0 stack stack-xl">
+                        <div className="p-0 stack stack-xl">
                           <h2 className="h5">{post.title}</h2>
                           <div className="text-gray-600 text-sm">
                             {post.date}
                           </div>
-                        </CardBody>
-                      </Card>
+                        </div>
+                      </div>
                     </article>
                   </Link>
                 </li>

@@ -1,36 +1,75 @@
 <form
-  action="/contact"
   class="max-w-prose stack stack-lg"
-  name="contact"
-  method="POST"
-  netlify-honeypot="bot-field"
   data-netlify="true"
+  enctype="application/x-www-form-urlencoded"
+  method="POST"
+  name="contact"
+  netlify-honeypot="bot-field"
 >
-  <div class="stack">
+  <div class="stack stack-sm">
     <p class="hidden">
       <label>
         Don't fill this out if you're human: <input name="bot-field" />
       </label>
     </p>
+    <input type="hidden" name="form-name" value="contact" />
     <input
       name="subject"
       type="hidden"
       value="New contact form submission from Sousta website"
     />
-    <div>
-      <input type="text" label="Your Name" name="name" required />
-    </div>
-    <div>
+    <label class="d-form-control">
+      <div class="d-label">
+        <span class="d-label-text">
+          Name
+          <span class="text-red-500"> *</span>
+        </span>
+      </div>
       <input
-        label="Your Email"
+        class="d-input d-input-bordered w-full"
+        label="Name"
+        name="name"
+        placeholder="Enter your first name"
+        required
+        type="text"
+      />
+    </label>
+    <label class="d-form-control">
+      <div class="d-label">
+        <span class="d-label-text">
+          Email
+          <span class="text-red-500"> *</span>
+        </span>
+      </div>
+      <input
+        class="d-input d-input-bordered w-full"
+        label="Email"
         name="email"
+        placeholder="Enter your email"
+        required
         type="email"
+      />
+    </label>
+    <label class="d-form-control">
+      <div class="d-label">
+        <span class="d-label-text">
+          Message
+          <span class="text-red-500"> *</span>
+        </span>
+      </div>
+      <textarea
+        class="d-textarea d-textarea-bordered w-full"
+        label="Message"
+        name="message"
+        placeholder="Why are you reaching out today?"
         required
       />
-    </div>
-    <div>
-      <textarea label="Message" name="message" required />
-    </div>
+    </label>
   </div>
-  <button type="submit">Send Message</button>
+  <button
+    type="submit"
+    class="d-btn bg-blue-900 text-white uppercase hover:bg-yellow-500 hover:text-gray-900"
+  >
+    Send Message
+  </button>
 </form>

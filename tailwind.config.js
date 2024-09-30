@@ -69,4 +69,9 @@ module.exports = withMT({
       '5xl': 'clamp(2.5341rem, 1.3735rem + 5.8033vi, 4.7684rem)',
     },
   },
+  plugins: [require('daisyui')],
+  daisyui: {
+    prefix: 'd-',
+    themes: ['corporate'],
+  },
 })
