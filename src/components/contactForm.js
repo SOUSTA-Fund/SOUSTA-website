@@ -4,7 +4,6 @@ import { Input, Button, Textarea, Typography } from '@material-tailwind/react'
 const ContactForm = () => {
   return (
     <form
-      action="/contact"
       className="max-w-prose stack stack-lg"
       data-netlify="true"
       enctype="application/x-www-form-urlencoded"
