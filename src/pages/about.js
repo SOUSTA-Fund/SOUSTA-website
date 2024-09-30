@@ -2,7 +2,6 @@ import * as React from 'react'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 import { graphql } from 'gatsby'
-import { Card } from '@material-tailwind/react'
 
 const AboutPage = ({ data }) => {
   const post = data?.wpPage
@@ -15,12 +14,10 @@ const AboutPage = ({ data }) => {
             <header>
               <h1>{post.title}</h1>
             </header>
-            <Card className="p-0">
-              <div
-                className="stack"
-                dangerouslySetInnerHTML={{ __html: post.content }}
-              />
-            </Card>
+            <div
+              className="bg-white stack"
+              dangerouslySetInnerHTML={{ __html: post.content }}
+            />
           </>
         )}
       </article>

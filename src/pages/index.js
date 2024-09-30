@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { graphql, Link } from 'gatsby'
 import routes from '../routes'
-import { Card } from '@material-tailwind/react'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 
@@ -16,12 +15,10 @@ const IndexPage = ({ data }) => {
             <header>
               <h1 className="lg:text-5xl">{page.title}</h1>
             </header>
-            <Card className="p-0">
-              <div
-                className="stack"
-                dangerouslySetInnerHTML={{ __html: page.content }}
-              />
-            </Card>
+            <div
+              className="bg-white stack"
+              dangerouslySetInnerHTML={{ __html: page.content }}
+            />
             <div className="flex flex-col gap-6 md:flex-row">
               <div className="flex">
                 <Link

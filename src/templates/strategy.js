@@ -2,7 +2,6 @@ import * as React from 'react'
 import Layout from '../components/layout'
 import { graphql } from 'gatsby'
 import Seo from '../components/seo'
-import { Card } from '@material-tailwind/react'
 
 export default function StrategyPost({ data }) {
   const post = data.allWpStrategy.nodes[0]
@@ -13,12 +12,10 @@ export default function StrategyPost({ data }) {
         <header>
           <h1>{post.title}</h1>
         </header>
-        <Card className="p-0 stack">
-          <div
-            className="stack"
-            dangerouslySetInnerHTML={{ __html: post.content }}
-          />
-        </Card>
+        <div
+          className="bg-white stack"
+          dangerouslySetInnerHTML={{ __html: post.content }}
+        />
       </article>
     </Layout>
   )
