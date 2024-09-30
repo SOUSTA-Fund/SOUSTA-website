@@ -4,12 +4,13 @@ import { Input, Button, Textarea, Typography } from '@material-tailwind/react'
 const ContactForm = () => {
   return (
     <form
-      className="max-w-prose stack stack-lg"
       action="/contact"
-      name="contact"
-      method="POST"
-      netlify-honeypot="bot-field"
+      className="max-w-prose stack stack-lg"
       data-netlify="true"
+      enctype="application/x-www-form-urlencoded"
+      method="POST"
+      name="contact"
+      netlify-honeypot="bot-field"
     >
       <div className="stack">
         <p className="hidden">
