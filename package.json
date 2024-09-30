@@ -16,7 +16,6 @@
     "@fontsource/ibm-plex-sans": "^5.0.20",
     "@fontsource/pt-sans": "^5.0.8",
     "@fontsource/pt-serif": "^5.0.13",
-    "@material-tailwind/react": "^2.1.10",
     "autoprefixer": "^10.4.20",
     "gatsby": "^5.13.7",
     "gatsby-adapter-netlify": "^1.1.7",
