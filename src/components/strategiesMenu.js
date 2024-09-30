@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link, graphql, useStaticQuery } from 'gatsby'
-import { Menu, MenuHandler, MenuList, MenuItem } from '@material-tailwind/react'
 import routes from '../routes'
 
 /**
@@ -26,25 +25,25 @@ export default function StrategiesMenu({ link, text }) {
   } = data
 
   return (
-    <Menu allowHover>
-      <MenuHandler>
+    <ul className="d-dropdown d-dropdown-hover">
+      <li role="button">
         <Link
-          className="py-2"
+          className="py-2 uppercase"
           activeClassName={'border-b border-gray-900 border-solid'}
           to={link}
         >
           {text}
         </Link>
-      </MenuHandler>
-      <MenuList className="bg-white rounded-none">
+      </li>
+      <ul className="bg-white d-menu d-dropdown-content shadow w-52">
         {strategies.map(({ slug, title }) => (
-          <MenuItem key={slug} className="bg-transparent">
+          <li key={slug} className="bg-transparent">
             <Link className="no-underline" to={`${routes.strategies}/${slug}`}>
               {title}
             </Link>
-          </MenuItem>
+          </li>
         ))}
-      </MenuList>
-    </Menu>
+      </ul>
+    </ul>
   )
 }

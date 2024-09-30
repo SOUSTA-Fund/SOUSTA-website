@@ -14,7 +14,7 @@ export default function NavItems() {
 
   return (
     <nav id="main-nav">
-      <ul className="flex gap-10 text-sm tracking-wide uppercase">
+      <ul className="flex gap-10 text-sm tracking-wide">
         {navLinks.map(({ link, text }, i) => {
           if (text.toLowerCase().includes('strategies')) {
             return (
@@ -26,7 +26,7 @@ export default function NavItems() {
             return (
               <li key={i}>
                 <Link
-                  className="py-2"
+                  className="py-2 uppercase"
                   activeClassName={'border-b border-gray-900 border-solid'}
                   to={link}
                 >
