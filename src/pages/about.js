@@ -11,7 +11,7 @@ const AboutPage = ({ data }) => {
       <article className="stack stack-2xl">
         {post && (
           <>
-            <header>
+            <header className="flex justify-center">
               <h1>{post.title}</h1>
             </header>
             <div
