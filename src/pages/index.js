@@ -22,7 +22,7 @@ const IndexPage = ({ data }) => {
             <div className="flex flex-col gap-6 md:flex-row">
               <div className="flex">
                 <Link
-                  className="bg-white border border-gray-900 py-3 px-6 no-underline text-gray-900 text-sm transition-all uppercase hover:bg-yellow-600"
+                  className="bg-white border border-gray-900 font-bold py-3 px-6 no-underline text-gray-900 text-sm transition-all uppercase hover:bg-yellow-500"
                   to={routes.about}
                   aria-label="about"
                 >
@@ -31,7 +31,7 @@ const IndexPage = ({ data }) => {
               </div>
               <div className="flex">
                 <Link
-                  className="bg-white border border-gray-900 py-3 px-6 no-underline text-gray-900 text-sm transition-all uppercase hover:bg-yellow-600"
+                  className="bg-white border border-gray-900 font-bold py-3 px-6 no-underline text-gray-900 text-sm transition-all uppercase hover:bg-yellow-500"
                   to={routes.team}
                   aria-label="team"
                 >
@@ -40,7 +40,7 @@ const IndexPage = ({ data }) => {
               </div>
               <div className="flex">
                 <Link
-                  className="bg-white border border-gray-900 py-3 px-6 no-underline text-gray-900 text-sm transition-all uppercase hover:bg-yellow-600"
+                  className="bg-white border border-gray-900 font-bold py-3 px-6 no-underline text-gray-900 text-sm transition-all uppercase hover:bg-yellow-500"
                   to={routes.strategies}
                   aria-label="strategies"
                 >
